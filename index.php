@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<body>
-    <?php include './src/app.php' ?>
+    <link href="./style.css" rel="stylesheet">
+<body class="bg-zinc-950 text-zinc-50 antialiased">
+    <?php include_once './src/app.php' ?>
 </body>
 </html>

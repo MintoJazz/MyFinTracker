@@ -1,9 +1,7 @@
-<?php 
-    require_once './controller/BucketDAO.php';
-    require_once './components/bucketView.php';
+<?php
+require_once './src/controller/DAO.php';
 
-    $db = new SQLite3('./database.db');
-    $bucketDAO = new BucketDAO($db);
+$db = new SQLite3('./database.db');
+$bucketDAO = new DAO('bucket');
 
-    foreach ($bucketDAO->findAll() as $bucket) echo BucketCard($bucket);
-?>
+foreach ($bucketDAO->findAll($db) as $bucket) include './src/components/BucketCard.php';
