@@ -1,0 +1,61 @@
+{
+    "packages": [
+        {
+            "name": "natewiebe13/php-lucide",
+            "version": "v1.0.100",
+            "version_normalized": "1.0.100.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/natewiebe13/php-lucide.git",
+                "reference": "962b5a61e3943d921eb148f3525d06f7d16ace69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/natewiebe13/php-lucide/zipball/962b5a61e3943d921eb148f3525d06f7d16ace69",
+                "reference": "962b5a61e3943d921eb148f3525d06f7d16ace69",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "phpunit/phpunit": "^9.5"
+            },
+            "time": "2026-02-01T19:13:34+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Lucide\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nate Wiebe",
+                    "email": "nate@northern.co"
+                }
+            ],
+            "description": "PHP library for Lucide icons",
+            "keywords": [
+                "icons",
+                "lucide",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/natewiebe13/php-lucide/issues",
+                "source": "https://github.com/natewiebe13/php-lucide/tree/v1.0.100"
+            },
+            "install-path": "../natewiebe13/php-lucide"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

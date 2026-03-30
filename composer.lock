@@ -1,0 +1,71 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "32a63491121c8f06f28e06911460e147",
+    "packages": [
+        {
+            "name": "natewiebe13/php-lucide",
+            "version": "v1.0.100",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/natewiebe13/php-lucide.git",
+                "reference": "962b5a61e3943d921eb148f3525d06f7d16ace69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/natewiebe13/php-lucide/zipball/962b5a61e3943d921eb148f3525d06f7d16ace69",
+                "reference": "962b5a61e3943d921eb148f3525d06f7d16ace69",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ext-dom": "*",
+                "ext-json": "*",
+                "ext-libxml": "*",
+                "ext-simplexml": "*",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Lucide\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nate Wiebe",
+                    "email": "nate@northern.co"
+                }
+            ],
+            "description": "PHP library for Lucide icons",
+            "keywords": [
+                "icons",
+                "lucide",
+                "svg"
+            ],
+            "support": {
+                "issues": "https://github.com/natewiebe13/php-lucide/issues",
+                "source": "https://github.com/natewiebe13/php-lucide/tree/v1.0.100"
+            },
+            "time": "2026-02-01T19:13:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}

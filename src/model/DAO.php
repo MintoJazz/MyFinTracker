@@ -6,7 +6,7 @@ final class DAO {
     public function __construct(string $table) { $this->table = $table; }
 
     public function findAll(SQLite3 $db) {
-        $preparedStatement = $db->prepare("SELECT * FROM {$this->table};");
+        $preparedStatement = $db->prepare("SELECT * FROM \"{$this->table}\";");
         $resultSet = $preparedStatement->execute();
         $list = [];
 
@@ -16,22 +16,22 @@ final class DAO {
     }
 
     public function findOneByKey(SQLite3 $db, string $key, $val) {
-        $preparedStatement = $db->prepare("SELECT * FROM {$this->table} WHERE $key = :val");
+        $preparedStatement = $db->prepare("SELECT * FROM \"{$this->table}\" WHERE $key = :val");
         $preparedStatement->bindValue(':val', $val);
 
         $resultSet = $preparedStatement->execute();
 
-        return $resultSet->fetchArray();
+        return $resultSet->fetchArray(SQLITE3_ASSOC);
     }
 
     public function findManyByKey(SQLite3 $db, string $key, $val) {
-        $preparedStatement = $db->prepare("SELECT * FROM {$this->table} WHERE $key = :val");
+        $preparedStatement = $db->prepare("SELECT * FROM \"{$this->table}\" WHERE $key = :val");
         $preparedStatement->bindValue(':val', $val);
 
         $resultSet = $preparedStatement->execute();
         $list = [];
 
-        while ($row = $resultSet->fetchArray()) $list[] = $row;
+        while ($row = $resultSet->fetchArray(SQLITE3_ASSOC)) $list[] = $row;
 
         return $list;
     }
@@ -40,10 +40,10 @@ final class DAO {
         $keys = array_keys($data);
         $pairs = implode(', ', array_map(fn($k) => "$k = :$k", $keys));
 
-        $preparedStatement = $db->prepare("UPDATE {$this->table} SET $pairs WHERE $key = :val");
+        $preparedStatement = $db->prepare("UPDATE \"{$this->table}\" SET $pairs WHERE $key = :val");
         
         foreach ($data as $k => $v) $preparedStatement->bindValue(":$k", $v);
-        $preparedStatement->bindValue(':val',$val);
+        $preparedStatement->bindValue(':val', $val);
 
         $preparedStatement->execute();
 
@@ -55,7 +55,7 @@ final class DAO {
         $columns = implode(', ', $keys);
         $placeholders = ':' . implode(', :', $keys);
 
-        $preparedStatement = $db->prepare("INSERT INTO {$this->table} ($columns) VALUES ($placeholders)");
+        $preparedStatement = $db->prepare("INSERT INTO \"{$this->table}\" ($columns) VALUES ($placeholders)");
 
         foreach ($data as $key => $val) $preparedStatement->bindValue(":$key", $val);
 
@@ -64,7 +64,7 @@ final class DAO {
     }
 
     public function killManyByKey(SQLite3 $db, string $key, $val) {
-        $preparedStatement = $db->prepare("DELETE FROM {$this->table} WHERE $key = :val");
+        $preparedStatement = $db->prepare("DELETE FROM \"{$this->table}\" WHERE $key = :val");
         $preparedStatement->bindValue(':val', $val);
 
         $preparedStatement->execute();

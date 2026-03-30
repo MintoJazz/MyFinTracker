@@ -1,0 +1,5 @@
+{
+    "require": {
+        "natewiebe13/php-lucide": "^1.0"
+    }
+}
